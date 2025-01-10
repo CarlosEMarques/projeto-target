@@ -1,17 +1,11 @@
 // Inverter String
-
 function inverterTexto() {
     const texto = document.getElementById("texto").value;
-    let invertido = "";
-    for (let i = texto.length - 1; i >= 0; i--) {
-        invertido += texto[i];
-    }
-    document.getElementById("resultadoInverter").innerText = "String invertida: " + invertido;
+    const invertido = texto.split('').reverse().join('');
+    document.getElementById("resultadoInverter").innerText = `String invertida: ${invertido}`;
 }
 
-
-//Faturamento por Estado
-
+// Faturamento por Estado
 const faturamentoEstado = {
     "SP": 67836.43,
     "RJ": 36678.66,
@@ -25,12 +19,10 @@ function calcularPercentuais() {
     const percentuais = Object.entries(faturamentoEstado).map(
         ([estado, valor]) => `${estado}: ${(valor / total * 100).toFixed(2)}%`
     );
-
     document.getElementById("resultadoEstado").innerHTML = percentuais.join("<br>");
 }
 
-//Faturamento Diario
-
+// Faturamento Diário
 const data = {
     "faturamento": [
         200.5, 300.0, 0.0, 0.0, 400.0, 500.0, 600.0,
@@ -42,18 +34,7 @@ const data = {
 };
 
 function analisarFaturamento() {
-    const data = {
-        "faturamento": [
-            200.5, 300.0, 0.0, 0.0, 400.0, 500.0, 600.0,
-            0.0, 100.0, 300.0, 0.0, 0.0, 700.0, 0.0,
-            800.0, 0.0, 300.0, 200.0, 100.0, 0.0, 0.0,
-            400.0, 600.0, 700.0, 0.0, 0.0, 100.0, 200.0,
-            300.0, 0.0
-        ]
-    };
-
     const faturamentoDiario = data.faturamento;
-
     const valoresValidos = faturamentoDiario.filter(valor => valor > 0);
 
     if (valoresValidos.length === 0) {
@@ -67,40 +48,38 @@ function analisarFaturamento() {
     const diasAcimaMedia = valoresValidos.filter(valor => valor > media).length;
 
     document.getElementById("resultadoDiario").innerHTML = `
-        Menor faturamento: ${menor.toFixed(2)} <br>
-        Maior faturamento: ${maior.toFixed(2)} <br>
+        Menor faturamento: R$ ${menor.toFixed(2)} <br>
+        Maior faturamento: R$ ${maior.toFixed(2)} <br>
         Dias acima da média: ${diasAcimaMedia}
     `;
 }
 
-
-//Sequencia Fibonacci
-
+// Sequência Fibonacci
 function verificarFibonacci() {
     const numero = parseInt(document.getElementById("numero").value);
-    let a = 0, b = 1, encontrado = false;
 
-    while (b <= numero) {
-        if (b === numero || numero === 0) {
-            encontrado = true;
-            break;
-        }
+    if (isNaN(numero) || numero === "") {
+        document.getElementById("resultadoFibonacci").innerText = "Por favor, digite um número válido.";
+        return;  
+    }
+
+    let a = 0, b = 1;
+
+    while (b < numero) {
         [a, b] = [b, a + b];
     }
 
-    document.getElementById("resultadoFibonacci").innerText = encontrado
+    const resultado = (b === numero || numero === 0)
         ? `${numero} pertence à sequência de Fibonacci.`
         : `${numero} não pertence à sequência de Fibonacci.`;
+
+    document.getElementById("resultadoFibonacci").innerText = resultado;
 }
 
 
-//Calcular Soma
-
+// Calcular Soma
 function calcularSoma() {
-    let indice = 13, soma = 0, k = 0;
-    while (k < indice) {
-        k++;
-        soma += k;
-    }
-    document.getElementById("resultadoSoma").innerText = "O valor de SOMA é: " + soma;
+    const indice = 13;
+    const soma = (indice * (indice + 1)) / 2;  
+    document.getElementById("resultadoSoma").innerText = `O valor de SOMA é: ${soma}`;
 }

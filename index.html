@@ -7,52 +7,48 @@
     <title>Projeto Target</title>
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    
     <main>
         <header>
             <h1>Projeto</h1>
-            <img src="assets/imagens/logoTarget.png" /> 
-                
+            <img src="assets/imagens/logoTarget.png" alt="Logo Target">
         </header>
+        
         <section class="calculo-container">
-            <h1>Cálculo da Variável SOMA</h1>
+            <h2>Cálculo da Variável SOMA</h2>
             <button onclick="calcularSoma()">Calcular</button>
-            <p id="resultadoSoma"></p>
-
+            <p class="resultado" id="resultadoSoma"></p>
         </section>
 
         <section class="fibonacci-container">
-            <h1>Verificar Número na Sequência de Fibonacci</h1>
+            <h2>Verificar Número na Sequência de Fibonacci</h2>
             <input type="number" id="numero" placeholder="Digite um número">
             <button onclick="verificarFibonacci()">Verificar</button>
-            <p id="resultadoFibonacci"></p>
+            <p class="resultado" id="resultadoFibonacci"></p>
         </section>
 
-
         <section class="diario-container">
-            <h1>Análise de Faturamento Diário</h1>
+            <h2>Análise de Faturamento Diário</h2>
             <button onclick="analisarFaturamento()">Analisar</button>
-            <p id="resultadoDiario"></p>
+            <p class="resultado" id="resultadoDiario"></p>
         </section>
 
         <section class="estado-container">
-            <h1>Percentual de Faturamento por Estado</h1>
+            <h2>Percentual de Faturamento por Estado</h2>
             <button onclick="calcularPercentuais()">Calcular</button>
-            <p id="resultadoEstado"></p>
-
+            <p class="resultado" id="resultadoEstado"></p>
         </section>
+
         <section class="inverter-container">
-            <h1>Inverter String</h1>
+            <h2>Inverter String</h2>
             <input type="text" id="texto" placeholder="Digite uma string">
             <button onclick="inverterTexto()">Inverter</button>
-            <p id="resultadoInverter"></p>
+            <p class="resultado" id="resultadoInverter"></p>
         </section>
-
     </main>
+
     <script src="assets/script/funcoes.js"></script>
 </body>
 
