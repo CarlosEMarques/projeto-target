@@ -31,21 +31,48 @@ function calcularPercentuais() {
 
 //Faturamento Diario
 
-const faturamentoDiario = [0, 100, 200, 0, 500, 0, 300, 0, 150, 400, 0, 0, 700, 0, 250];
+const data = {
+    "faturamento": [
+        200.5, 300.0, 0.0, 0.0, 400.0, 500.0, 600.0,
+        0.0, 100.0, 300.0, 0.0, 0.0, 700.0, 0.0,
+        800.0, 0.0, 300.0, 200.0, 100.0, 0.0, 0.0,
+        400.0, 600.0, 700.0, 0.0, 0.0, 100.0, 200.0,
+        300.0, 0.0
+    ]
+};
 
 function analisarFaturamento() {
+    const data = {
+        "faturamento": [
+            200.5, 300.0, 0.0, 0.0, 400.0, 500.0, 600.0,
+            0.0, 100.0, 300.0, 0.0, 0.0, 700.0, 0.0,
+            800.0, 0.0, 300.0, 200.0, 100.0, 0.0, 0.0,
+            400.0, 600.0, 700.0, 0.0, 0.0, 100.0, 200.0,
+            300.0, 0.0
+        ]
+    };
+
+    const faturamentoDiario = data.faturamento;
+
     const valoresValidos = faturamentoDiario.filter(valor => valor > 0);
+
+    if (valoresValidos.length === 0) {
+        document.getElementById("resultadoDiario").innerHTML = "Nenhum dado válido encontrado.";
+        return;
+    }
+
     const menor = Math.min(...valoresValidos);
     const maior = Math.max(...valoresValidos);
     const media = valoresValidos.reduce((a, b) => a + b, 0) / valoresValidos.length;
     const diasAcimaMedia = valoresValidos.filter(valor => valor > media).length;
 
     document.getElementById("resultadoDiario").innerHTML = `
-        Menor faturamento: ${menor} <br>
-        Maior faturamento: ${maior} <br>
+        Menor faturamento: ${menor.toFixed(2)} <br>
+        Maior faturamento: ${maior.toFixed(2)} <br>
         Dias acima da média: ${diasAcimaMedia}
     `;
 }
+
 
 //Sequencia Fibonacci
 
