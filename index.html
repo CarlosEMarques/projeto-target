@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Target</title>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <main>
+        <header>
+            <h1>Projeto</h1>
+            <img src="assets/imagens/logoTarget.png" /> 
+                
+        </header>
+        <section class="calculo-container">
+            <h1>Cálculo da Variável SOMA</h1>
+            <button onclick="calcularSoma()">Calcular</button>
+            <p id="resultadoSoma"></p>
+
+        </section>
+
+        <section class="fibonacci-container">
+            <h1>Verificar Número na Sequência de Fibonacci</h1>
+            <input type="number" id="numero" placeholder="Digite um número">
+            <button onclick="verificarFibonacci()">Verificar</button>
+            <p id="resultadoFibonacci"></p>
+        </section>
+
+
+        <section class="diario-container">
+            <h1>Análise de Faturamento Diário</h1>
+            <button onclick="analisarFaturamento()">Analisar</button>
+            <p id="resultadoDiario"></p>
+        </section>
+
+        <section class="estado-container">
+            <h1>Percentual de Faturamento por Estado</h1>
+            <button onclick="calcularPercentuais()">Calcular</button>
+            <p id="resultadoEstado"></p>
+
+        </section>
+        <section class="inverter-container">
+            <h1>Inverter String</h1>
+            <input type="text" id="texto" placeholder="Digite uma string">
+            <button onclick="inverterTexto()">Inverter</button>
+            <p id="resultadoInverter"></p>
+        </section>
+
+    </main>
+    <script src="assets/script/funcoes.js"></script>
+</body>
+
+</html>
